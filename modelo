@@ -1,0 +1,87 @@
+/*
+
+// model 
+
+exports.find = (id) => {
+  return { id: '1', name: 'teste' };
+}
+
+// arquivo usuarios.controller.js
+/* JOGOS
+buscar (show)
+listar (index)
+criar (create)
+atualizar (update)
+excluir (destroy)
+*/
+
+// arquivo games.controller.js
+/* JOGOS
+buscar (show)
+listar (index)
+criar (create)
+atualizar (update)
+excluir (destroy)
+
+
+
+
+
+exports.post = (req, res, next) => {
+  if (!camposEnviadosCorretamente(body)) {
+    res.status(400).send('Algum campo não foi preenchido!');
+    return;
+  }
+
+  // chamar model e gravar os valores
+
+  res.status(201).send('Requisição recebida com sucesso!');
+};
+exports.put = (req, res, next) => {
+  let id = req.params.id;
+  res.status(201).send(`Requisição recebida com sucesso! ${id}`);
+};
+exports.delete = (req, res, next) => {
+  let id = req.params.id;
+  res.status(200).send(`Requisição recebida com sucesso! ${id}`);
+};
+
+function camposEnviadosCorretamente(body) {
+  if (body.id == null) return false;
+  if (body.name == '') return false;
+  if (body.age == '') return false;
+
+  return true;
+}
+
+// ============================================================
+// arquivo games.routes.js
+
+const express = require('express');
+const router = express.Router();
+const controller = require('../controllers/gamesController')
+
+router.post('/games', controller.get);
+router.put('/:id', controller.put);
+router.delete('/:id', controller.delete);
+
+module.exports = router;
+
+
+// ============================================================
+// arquivo app.js
+
+const express = require('express');
+const app = express();
+const router = express.Router();
+
+//Rotas
+const personRoute = require('./routes/gamesRoute');
+app.use('/games', auth, gamesRoute);
+module.exports = app;
+
+
+// www.meusite.com.br/games/*, personRoute
+
+
+*/
